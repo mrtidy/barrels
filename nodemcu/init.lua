@@ -1,3 +1,8 @@
+-- This is the file that runs automatically when the NodeMCU boots.  This loads
+-- all of the other files.  Notice that the files are .lua in source but when
+-- loaded they are .lc - the compiled files are used in hopes of running most
+-- smoothly on the device.
+
 config = dofile("config.lc")
 
 gpio.write(config.PIN.STATUS, gpio.LOW)
@@ -14,4 +19,4 @@ color = {red = 0, green = 0, blue = 0}
 -- TODO - would like to change setup to accept parameter
 -- so main.listen can be provided as callback when setup complete
 dofile("setup.lc")
-main = dofile("main.lc")
+app = dofile("app.lc")

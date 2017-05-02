@@ -38,4 +38,4 @@ function pwm.setduty(pin, duty)
 end
 
 config = require "config"
-main = require "main"
+app = require "app"

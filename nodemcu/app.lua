@@ -41,8 +41,8 @@ function module.update_led()
 end
 
 module.topic_handler_map = {
-  brightness = module.set_brightness,
-  color = module.set_color
+  [config.MQTT.TOPIC_BASE .. config.ID .. "/brightness"] = module.set_brightness,
+  [config.MQTT.TOPIC_BASE .. config.ID .. "/color"] = module.set_color
 }
 
 return module
